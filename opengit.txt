@@ -1,1 +1,47 @@
-this is the open programm.
+Open a command prompt
+Open Git Bash or similar command prompt with git executable available.
+
+Change the current working directory to your local project.
+This can be done running the following command:
+
+cd [your_project_directory]
+
+Change to your desired branch
+You’ll probably want to merge to your main or master – so make sure it’s checked out!
+
+You can change it from GitHub Desktop (if you’re using it), or you can run this:
+
+git checkout [branch_name]
+
+Configure the origin as a remote repository
+This needs to be done to enable you to fetch the new commits from it. You can verify if it already is by running this:
+
+git remote -v
+
+
+If it isn’t, then run this:
+
+git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+
+Sync your local repository with the upstream (the original one)
+Run the following command in command prompt:
+
+git fetch upstream
+
+Perform merge
+Run this:
+
+git merge upstream/master
+
+
+If you get a text editor window in your bash, that’s just Vi asking for your commit comment for your merge. Don’t have to enter anything, just write “:wq” and you should be good.
+
+If you’re on Windows, install the latest git version and it’ll actually let you set Visual Studio Code as the default text editor.
+
+Push your local changes to your repository
+“Your local changes” = your merge from upstream = all of the new stuff from the original repository on GitHub.
+
+You can perform this step in GitHub Desktop, or by running this in your comsole prompt:
+
+git push
+
